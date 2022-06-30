@@ -69,7 +69,6 @@ class MainActivity : AppCompatActivity() {
             clickLemonImage()
         }
         lemonImage!!.setOnLongClickListener {
-            // TODO: replace 'false' with a call to the function that shows the squeeze count
             showSnackbar()
         }
     }
@@ -91,18 +90,29 @@ class MainActivity : AppCompatActivity() {
      * This method determines the state and proceeds with the correct action.
      */
     private fun clickLemonImage() {
-        // TODO: use a conditional statement like 'if' or 'when' to track the lemonadeState
-        //  when the image is clicked we may need to change state to the next step in the
-        //  lemonade making progression (or at least make some changes to the current state in the
-        //  case of squeezing the lemon). That should be done in this conditional statement
+        when(lemonadeState){
+            SELECT -> {
+                lemonadeState = SQUEEZE
+                lemonSize = lemonTree.pick()
+                squeezeCount = 0
+            }
+            SQUEEZE -> {
+                squeezeCount++;
+                lemonSize--;
+                if(lemonSize == 0){
+                    lemonadeState = DRINK
+                    squeezeCount = -1
+                }
+            }
+            DRINK -> {
+                lemonadeState = RESTART
+            }
+            RESTART -> {
+                lemonadeState = SELECT
+            }
+        }
 
-
-        // TODO: When the image is clicked in the DRINK state the state should become RESTART
-
-        // TODO: When the image is clicked in the RESTART state the state should become SELECT
-
-        // TODO: lastly, before the function terminates we need to set the view elements so that the
-        //  UI can reflect the correct state
+        setViewElements()
     }
 
     /**
