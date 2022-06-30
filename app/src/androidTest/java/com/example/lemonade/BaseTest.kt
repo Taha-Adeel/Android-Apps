@@ -26,6 +26,7 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.NoMatchingViewException
 import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.longClick
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.BoundedMatcher
 import androidx.test.espresso.matcher.ViewMatchers
@@ -72,7 +73,7 @@ open class BaseTest {
      */
     fun juiceLemon() {
         while (onView(withDrawable(R.drawable.lemon_squeeze)).isPresent()) {
-            onView(withId(R.id.image_lemon_state)).perform(click())
+            onView(withId(R.id.image_lemon_state)).perform(longClick())
         }
     }
 

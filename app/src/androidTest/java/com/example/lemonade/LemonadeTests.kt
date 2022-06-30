@@ -64,7 +64,7 @@ class LemonadeTests : BaseTest() {
     @Test
     fun `test_squeezing_lemon_proceeds_to_drink_state`() {
         // Click image to progress state
-        onView(withId(R.id.image_lemon_state)).perform(click())
+        onView(withId(R.id.image_lemon_state)).perform(longClick())
         juiceLemon()
         testState(R.string.lemon_drink, R.drawable.lemon_drink)
     }
