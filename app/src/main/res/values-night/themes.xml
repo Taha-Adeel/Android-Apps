@@ -27,5 +27,11 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="actionBarStyle">@style/MyActionBarDarkStyle</item>
+    </style>
+
+    <!-- Our new style for ActionBar -->
+    <style name="MyActionBarDarkStyle" parent="Widget.MaterialComponents.ActionBar.Primary">
+        <item name="background">@color/yellow_primary</item>
     </style>
 </resources>
