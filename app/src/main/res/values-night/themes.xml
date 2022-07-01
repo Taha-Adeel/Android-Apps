@@ -13,6 +13,9 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="actionBarStyle">@style/MyActionBarDarkStyle</item>
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+        <item name="radioButtonStyle">@style/Widget.TipCalculator.CompoundButton.RadioButton</item>
+        <item name="switchStyle">@style/Widget.TipCalculator.CompoundButton.Switch</item>
     </style>
 
     <!-- Our new style for ActionBar -->
