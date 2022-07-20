@@ -36,6 +36,7 @@ class GameViewModel: ViewModel() {
             ++_currentWordCount
             wordsList.add(currentWord)
         }
+        Log.d("GameFragment", "$currentWord")
     }
 
     /*
@@ -59,5 +60,15 @@ class GameViewModel: ViewModel() {
             return true
         }
         return false
+    }
+
+    /*
+    * Re-initializes the game data to restart the game.
+    */
+    fun reinitializeData() {
+        _score = 0
+        _currentWordCount = 0
+        wordsList.clear()
+        getNextWord()
     }
 }
